@@ -1,8 +1,9 @@
 let choices = ["rock", "paper", "scissors", "lizard", "spock"];
 
-function reset() {
-  userScore = parseInt(0);
-  computerScore = parseInt(0);
+function resetAndStart() {
+  userScore = 0;
+  computerScore = 0;
+  game();
 }
 
 function getComputerChoice() {
@@ -64,7 +65,5 @@ function game() {
 
 let btn = document.getElementById("startgamebutton");
 btn.addEventListener('click', event => {
-  game() && reset();
+  (resetAndStart());
 });
-
-//TO DO
