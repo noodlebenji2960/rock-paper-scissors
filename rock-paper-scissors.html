@@ -9,14 +9,28 @@
     <title>Rock Paper Scissors Game</title>
 </head>
 <body>
-    <iframe width="560" height="315" src="https://www.youtube.com/embed/_PUEoDYpUyQ?" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
-    <br>
-
-    <a href="http://www.samkass.com/theories/RPSSL.html" target="_blank">Visit the website of the creator of Rock, Paper, Scissors, Lizard Spock here! all hail Sam Kass.</a>
-
-    <p>Open console via right click > inspect> and click the button below to play 5 rounds of  Rock, Paper, Scissors, Lizard, Spock. Good Luck!</p>
-    <button id="startgamebutton">Play!</button>
-
+<div id="videoContainer">
+    <div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/_PUEoDYpUyQ?"></iframe>
+    </div>
+    <div>
+        <a href="http://www.samkass.com/theories/RPSSL.html" target="_blank">Visit the website of the creator of Rock, Paper, Scissors, Lizard Spock here! all hail Sam Kass.</a>
+        
+        <button id="hideOnboardingButton">Hide</button>
+    </div>
+</div>
+<div class="playContainer">
+    <div id="results">Best of 5 wins! Make your selection!</div>
+    <div id="optionsButtons">
+        <button id="rockButton"><h1>✊</h1><p>Rock</p></button>
+        <button id="paperButton"><h1>✋</h1><p>Paper</p></button>
+        <button id="scissorsButton"><h1>✌️</h1><p>Scissors</p></button>
+        <button id="lizardButton"><h1>🦎</h1><p>Lizard</p></button>
+        <button id="spockButton"><h1>🖖</h1><p>Spock</p></button>
+    </div>
+    <div id="score">YOUR SCORE: - COMPUTER SCORE: -</div>
+    <button id="resetButton" onClick="window.location.reload();">New Game (Refresh Page)</button>
+</div>
+<div class="footer">coded by <b>Benjamin</b><largeEmoji>🐤</largeEmoji></div>
 </body>
 </html>
