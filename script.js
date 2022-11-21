@@ -8,24 +8,63 @@ function getComputerChoice() {
 
 function playRound(playerSelection) {
   let computerSelection = getComputerChoice();
+  
   if ( (playerSelection === 'rock' && (computerSelection === 'scissors' || computerSelection === 'lizard'))
     || (playerSelection === 'paper' && (computerSelection === 'rock' || computerSelection == 'spock'))
     || (playerSelection === 'scissors' && (computerSelection === 'paper' || computerSelection === 'lizard'))
     || (playerSelection === 'spock' && (computerSelection === 'scissors' || computerSelection === 'rock'))
     || (playerSelection === 'lizard' && (computerSelection === 'paper' || computerSelection === 'spock'))) {
       userScore++
-      document.getElementById("results").textContent = "Yay! You won the round! " + playerSelection + " beats " + computerSelection;
+      document.getElementById("results").textContent = "Yay! You won the round! " + messageMe();
       updateScore()
   }
   else if (computerSelection === playerSelection){
-    document.getElementById("results").textContent = "oh no! Looks like a draw!";
+    document.getElementById("results").textContent = "oh no! Looks like a draw! " + messageMe();
     updateScore()
   }
   else {
     computerScore++
-    document.getElementById("results").textContent = "Sorry, you lost the round. " + computerSelection + " beats " + playerSelection;
+    document.getElementById("results").textContent = "Sorry, you lost the round. " + messageMe();
     updateScore()
   }
+
+  function messageMe(){
+    let message
+  switch (playerSelection, computerSelection){
+  case "rock", "lizard":
+    message = "Rock crushes lizard!";
+    break;
+  case "rock", "scissors":
+    message = "Rock smashes scissors!";
+    break;
+  case "paper", "rock":
+    message = "Paper covers rock!";
+    break;
+  case "paper", "spock":
+    message = "Paper disproves spock!";
+    break;
+  case "scissors", "paper":
+    message = "Scissors cuts paper!";
+    break;
+  case "scissors", "lizard":
+    message = "Scissors decapitates lizard!";
+    break;
+  case "spock", "scissors":
+    message = "Spock smashes scissors!";
+    break;
+  case "spock", "rock":
+    message = "Spock vaporizes rock!";
+    break;
+  case "lizard", "spock":
+    message = "Lizard poisons spock!";
+    break;
+  case "lizard", "paper":
+    message = "Lizard eats paper!";
+    break;
+  }
+  return message
+  }
+
 }
 
 function hideOnboarding() {
@@ -80,5 +119,4 @@ spockBtn.addEventListener('click', event => {
   (playRound("spock"));
 });
 
-//TO DO
-//change this beats that to rock smashes lizard, spock vaporizes rock, etc.
+
