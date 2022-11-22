@@ -29,38 +29,39 @@ function playRound(playerSelection) {
   }
 
   function messageMe(){
-    let message
-  switch (playerSelection, computerSelection){
-  case "rock", "lizard":
+  switch (true){
+  case ((playerSelection == "rock" && computerSelection == "lizard") || (playerSelection == "lizard" && computerSelection == "rock")):
     message = "Rock crushes lizard!";
     break;
-  case "rock", "scissors":
+  case ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "rock")):
     message = "Rock smashes scissors!";
     break;
-  case "paper", "rock":
+  case ((playerSelection == "paper" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "paper")): 
     message = "Paper covers rock!";
     break;
-  case "paper", "spock":
+  case ((playerSelection == "paper" && computerSelection == "spock") || (playerSelection == "spock" && computerSelection == "paper")):
     message = "Paper disproves spock!";
     break;
-  case "scissors", "paper":
+  case ((playerSelection == "scissors" && computerSelection == "paper") || (playerSelection =="paper" && computerSelection== "scissors")):
     message = "Scissors cuts paper!";
     break;
-  case "scissors", "lizard":
+  case ((playerSelection == "scissors" && computerSelection == "lizard") || ( playerSelection == "lizard" && computerSelection == "scissors")):
     message = "Scissors decapitates lizard!";
     break;
-  case "spock", "scissors":
+  case ((playerSelection == "spock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "spock")):
     message = "Spock smashes scissors!";
     break;
-  case "spock", "rock":
+  case ((playerSelection == "spock" && computerSelection == "rock") || (playerSelection == "rock" && computerSelection == "spock")):
     message = "Spock vaporizes rock!";
     break;
-  case "lizard", "spock":
+  case ((playerSelection == "lizard" && computerSelection == "spock") || (playerSelection == "spock" && computerSelection == "lizard")):
     message = "Lizard poisons spock!";
     break;
-  case "lizard", "paper":
+  case ((playerSelection == "lizard" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "lizard")):
     message = "Lizard eats paper!";
     break;
+  default:
+    message = " ";
   }
   return message
   }
